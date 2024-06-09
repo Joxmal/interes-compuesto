@@ -8,13 +8,15 @@ import InteresCompuesto from './components/InteresCompuesto.vue';
 
 <template>
 <main class="bg-blue-300 min-h-screen h-full flex flex-col items-center justify-center bg-gradient-to-r from-blue-500 to-purple-500">
-  <div>
+  <div class="jusify-center items-center flex flex-col">
+    <h1 class="text-4xl font-bold text-white mb-4 text-center">Calculadora de Interes Compuesto</h1>
     <input type="number" v-model="dias" placeholder="Dias" class="border border-gray-300 rounded-md p-2 m-2">
     <input type="number" v-model="monto" placeholder="Monto" class="border border-gray-300 rounded-md p-2 m-2">
   </div>
   
-  
-  <div v-if=" dias > 0 && monto > 0">
+  <div
+
+    v-if=" dias > 0 && monto > 0" >
     <InteresCompuesto :dias=dias :monto=monto />  <!-- Agrega el componente InteresCompuesto aquĆ­ -->
   </div>
 </main>
