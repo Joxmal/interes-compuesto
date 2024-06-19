@@ -33,8 +33,18 @@ function calcular_ganancia({dias, monto}:{dias:number, monto:number}) {
     dias_monto_acumulado.value.push({ dia: 0, monto })
   let ganancia_total = monto;
   for (let index = 0; index < dias; index++) {
-    ganancia_total += ganancia_total * 0.0545;
-    console.log(`dia ${index + 1}: ${ganancia_total.toFixed(2)}$ `);
+
+    if(ganancia_total < 54){
+      ganancia_total += (ganancia_total * 0.14)- ((ganancia_total*0.14)*0.02);
+      console.log(`dia ${index + 1}: ${ganancia_total.toFixed(2)}$ `);
+
+    }else{
+      ganancia_total += (ganancia_total * 0.143)- ((ganancia_total*0.143)*0.02);
+      console.log(`dia ${index + 1}: ${ganancia_total.toFixed(2)}$ `);
+    }
+
+
+
     
     dias_monto_acumulado.value.push({ dia: index + 1, monto: ganancia_total })
   }
